@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -6,6 +7,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: false,
+        textTheme: TextTheme(
+          bodyMedium: TextStyle( fontSize: 32),
+        ),
+      ),
       home: MyHomePage(),
     );
   }
@@ -35,7 +42,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Animated Text Demo 1"),
       ),
-        body: Center(child: Text('ok'),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(50,0,0,0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text('View'),
+                Text(' Mode')
+              ],
+            ),
+          ),
       ),
     );
   }
